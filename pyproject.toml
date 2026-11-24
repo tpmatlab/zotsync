@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zotsync"
+version = "0.1.0"
+description = "Zotero group -> Notion database sync (read-only Zotero side first)"
+requires-python = ">=3.10"
+dependencies = ["pyzotero>=1.5"]
+
+[project.optional-dependencies]
+notion = ["notion-client>=2.2"]
+dev = ["pytest>=8", "pandas", "matplotlib", "jupyterlab"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
